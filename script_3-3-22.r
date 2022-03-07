@@ -5,21 +5,19 @@ z <- subset(x, x$V11!=1 & x$V12!=1) #elim. rari
 z$V14 <- z$V11-z$V12
 z$V15 <- (z$V11-z$V12)/z$V11
 
-#zz <- subset(z, z[,14]>=-1 & z[,14]<=1) #con differenza tra -1 e 1
 zzz <- subset(z, z[,14]>=0 & z[,14]<=0) #con differenza = 0
 
-#finestre <- hist(zz[,11], xlab = "ac1-ac2 %", breaks = c(min(zz[,11]),1885,9223,22194,29486,max(zz[,11])))
 finestre <- hist(zzz[,11], xlab = "ac1-ac2 %", breaks = c(min(zzz[,11]),1885,9223,22194,29486,max(zzz[,11])))
 finestre
 
-#primo_subset <- subset(zz, zz[,11]>1885 & zz[,11]<9223)
+
 primo_subset <- subset(zzz, zzz[,11]>1885 & zzz[,11]<9223)
 
 #secondo_subset <- subset(zz, zz[,11]>9223 & zz[,11]<22194)
 
-#terzo_subset <- subset(zz, zz[,11]>22194 & zz[,11]<29486)
+
 terzo_subset <- subset(zzz, zzz[,11]>22194 & zzz[,11]<29486)
-finestre3 <- hist(terzo_subset[,11], xlab = "ac1-ac2 %")
+
 
 primo_e_terzo <- rbind(primo_subset,terzo_subset)
 
