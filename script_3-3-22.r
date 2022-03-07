@@ -1,5 +1,5 @@
 x <- read.table("C:\\Users/pietr/Documents/dnp/gnomad/1_chr_sep", skip = 1)
-#col.names =c("locus","refs","alts","distance","snp1","snp2","ac1","ac2","ac_mnv","ac1_adj","ac2_adj","ac_mnv_adj")
+#colnames(x) <- c("locus","refs","alts","distance","snp1","snp2","ac1","ac2","ac_mnv","ac1_adj","ac2_adj","ac_mnv_adj")
 
 z <- subset(x, x$V11!=1 & x$V12!=1) #elim. rari
 z$V14 <- z$V11-z$V12
